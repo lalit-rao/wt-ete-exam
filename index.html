@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>WT ETE Exam</title>
+</head>
+<body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Job Application Form</title>
+<style>
+  .error-message {
+    color: red;
+  }
+</style>
+</head>
+<body>
+
+<h2>Job Application Form</h2>
+<form id="jobApplicationForm">
+  <label for="firstName">First Name:</label><br>
+  <input type="text" id="firstName" name="firstName" required><br>
+  <label for="lastName">Last Name:</label><br>
+  <input type="text" id="lastName" name="lastName" required><br>
+  <label for="email">Email:</label><br>
+  <input type="email" id="email" name="email" required><br>
+  <label for="position">Position Applying for:</label><br>
+  <input type="text" id="position" name="position" required><br>
+  <label for="salary">Salary Requirements:</label><br>
+  <input type="number" id="salary" name="salary" required><br>
+  <label for="startDate">When can you start (Date):</label><br>
+  <input type="date" id="startDate" name="startDate" required><br>
+  <label for="phone">Phone:</label><br>
+  <input type="tel" id="phone" name="phone" required><br>
+  <label for="relocate">Are you willing to relocate?</label><br>
+  <input type="radio" id="relocateYes" name="relocate" value="Yes"> Yes<br>
+  <input type="radio" id="relocateNo" name="relocate" value="No" checked> No<br><br>
+  <button type="button" onclick="validateForm()">Send Application</button>
+  <button type="reset">Reset</button>
+</form>
+
+<div id="errorMessages" class="error-message"></div>
+
+<script>
+  function validateForm() {
+    var form = document.getElementById("jobApplicationForm");
+    var errorMessages = document.getElementById("errorMessages");
+    errorMessages.innerHTML = "";
+
+    var firstName = form.elements["firstName"].value.trim();
+    var lastName = form.elements["lastName"].value.trim();
+    var email = form.elements["email"].value.trim();
+    var position = form.elements["position"].value.trim();
+    var salary = form.elements["salary"].value.trim();
+    var startDate = form.elements["startDate"].value.trim();
+    var phone = form.elements["phone"].value.trim();
+
+    var isValid = true;
+
+    if (firstName === "") {
+      errorMessages.innerHTML += "Please enter your first name.<br>";
+      isValid = false;
+    }
+
+    if (lastName === "") {
+      errorMessages.innerHTML += "Please enter your last name.<br>";
+      isValid = false;
+    }
+
+    if (email === "") {
+      errorMessages.innerHTML += "Please enter your email address.<br>";
+      isValid = false;
+    }
+
+    if (position === "") {
+      errorMessages.innerHTML += "Please enter the position you are applying for.<br>";
+      isValid = false;
+    }
+
+    if (salary === "" || isNaN(salary)) {
+      errorMessages.innerHTML += "Please enter a valid salary requirement.<br>";
+      isValid = false;
+    }
+
+    if (startDate === "") {
+      errorMessages.innerHTML += "Please select when you can start.<br>";
+      isValid = false;
+    }
+
+    if (phone === "") {
+      errorMessages.innerHTML += "Please enter your phone number.<br>";
+      isValid = false;
+    }
+
+    if (!isValid) {
+      return;
+    }
+
+    // If all fields are valid, you can submit the form or perform any other action here.
+    // For example:
+    // form.submit();
+    alert("Form submitted successfully!");
+  }
+</script>
+
+</body>
+</html>
+
+</body>
+</html>
