@@ -2,115 +2,72 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+          name="viewport">
+    <meta content="ie=edge" http-equiv="X-UA-Compatible">
     <title>WT ETE Exam</title>
+    <link href="./styles.css" rel="stylesheet">
 </head>
 <body>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Job Application Form</title>
-<style>
-  .error-message {
-    color: red;
-  }
-</style>
-</head>
-<body>
+<div class="main-container">
+    <h1 class="heading">Job Application Form</h1>
+    <form id="jobApplicationForm">
+        <div class="inline-div">
+            <div class="container">
+                <label class="bold"  for="firstName">First Name:</label><br>
+                <input id="firstName" name="firstName" required type="text"><br><br>
+            </div>
 
-<h2>Job Application Form</h2>
-<form id="jobApplicationForm">
-  <label for="firstName">First Name:</label><br>
-  <input type="text" id="firstName" name="firstName" required><br>
-  <label for="lastName">Last Name:</label><br>
-  <input type="text" id="lastName" name="lastName" required><br>
-  <label for="email">Email:</label><br>
-  <input type="email" id="email" name="email" required><br>
-  <label for="position">Position Applying for:</label><br>
-  <input type="text" id="position" name="position" required><br>
-  <label for="salary">Salary Requirements:</label><br>
-  <input type="number" id="salary" name="salary" required><br>
-  <label for="startDate">When can you start (Date):</label><br>
-  <input type="date" id="startDate" name="startDate" required><br>
-  <label for="phone">Phone:</label><br>
-  <input type="tel" id="phone" name="phone" required><br>
-  <label for="relocate">Are you willing to relocate?</label><br>
-  <input type="radio" id="relocateYes" name="relocate" value="Yes"> Yes<br>
-  <input type="radio" id="relocateNo" name="relocate" value="No" checked> No<br><br>
-  <button type="button" onclick="validateForm()">Send Application</button>
-  <button type="reset">Reset</button>
-</form>
+            <div class="container">
+                <label class="bold"  for="lastName">Last Name:</label><br>
+                <input id="lastName" name="lastName" required type="text"><br><br>
+            </div>
+        </div>
 
-<div id="errorMessages" class="error-message"></div>
+        <div>
+            <label class="bold"  for="email">Email:</label><br>
+            <input id="email" name="email" required type="email"><br><br>
+        </div>
 
-<script>
-  function validateForm() {
-    var form = document.getElementById("jobApplicationForm");
-    var errorMessages = document.getElementById("errorMessages");
-    errorMessages.innerHTML = "";
+        <div>
+            <label class="bold"  for="position">Position you are applying for:</label><br>
+            <input id="position" name="position" required type="text"><br><br>
+        </div>
 
-    var firstName = form.elements["firstName"].value.trim();
-    var lastName = form.elements["lastName"].value.trim();
-    var email = form.elements["email"].value.trim();
-    var position = form.elements["position"].value.trim();
-    var salary = form.elements["salary"].value.trim();
-    var startDate = form.elements["startDate"].value.trim();
-    var phone = form.elements["phone"].value.trim();
+        <div class="inline-div">
+            <div class="container">
+                <label class="bold"  for="salary">Salary Requirements:</label><br>
+                <input id="salary" name="salary" required type="number"><br><br>
+            </div>
 
-    var isValid = true;
+            <div class="container">
+                <label class="bold" for="startDate">When can you start:</label><br>
+                <input id="startDate" name="startDate" required type="date"><br><br>
+            </div>
+        </div>
 
-    if (firstName === "") {
-      errorMessages.innerHTML += "Please enter your first name.<br>";
-      isValid = false;
-    }
+        <div>
+            <label class="bold"  for="phone">Phone:</label><br>
+            <input id="phone" name="phone" required type="tel"><br><br>
+        </div>
 
-    if (lastName === "") {
-      errorMessages.innerHTML += "Please enter your last name.<br>";
-      isValid = false;
-    }
+        <div>
+            <label class="bold" >Are you willing to relocate:</label><br>
+            <div class="relocation">
+                <input id="relocateYes" name="relocate" required type="radio" value="Yes">
+            <label for="relocateYes">Yes</label><br>
+            <input id="relocateNo" name="relocate" type="radio" value="No">
+            <label for="relocateNo">No</label><br><br>
+            </div>
+        </div>
 
-    if (email === "") {
-      errorMessages.innerHTML += "Please enter your email address.<br>";
-      isValid = false;
-    }
+        <div class="result">
+            <input type="submit" value="Send Application">
+            <input type="reset" value="Reset">
+        </div>
+    </form>
+</div>
 
-    if (position === "") {
-      errorMessages.innerHTML += "Please enter the position you are applying for.<br>";
-      isValid = false;
-    }
-
-    if (salary === "" || isNaN(salary)) {
-      errorMessages.innerHTML += "Please enter a valid salary requirement.<br>";
-      isValid = false;
-    }
-
-    if (startDate === "") {
-      errorMessages.innerHTML += "Please select when you can start.<br>";
-      isValid = false;
-    }
-
-    if (phone === "") {
-      errorMessages.innerHTML += "Please enter your phone number.<br>";
-      isValid = false;
-    }
-
-    if (!isValid) {
-      return;
-    }
-
-    // If all fields are valid, you can submit the form or perform any other action here.
-    // For example:
-    // form.submit();
-    alert("Form submitted successfully!");
-  }
-</script>
-
-</body>
-</html>
-
+<script src="validation.js"></script>
 </body>
 </html>

@@ -1,0 +1,58 @@
+* {
+    margin: -0px;
+    padding: -0px;
+    box-sizing: border-box;
+}
+
+.main-container {
+    height: 100%;
+    width: 390px;
+    padding: 10px 20px 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+    margin: 100px;
+}
+
+.heading {
+    text-decoration: underline;
+    margin-bottom: 20px;
+}
+
+.inline-div {
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+}
+
+.container {
+    display: block;
+}
+
+.result {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"]
+{
+    width: 100%;
+}
+
+input[type="submit"],
+input[type="reset"] {
+    padding-left: 6px;
+    padding-right: 6px;
+}
+
+.relocation {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 20px;
+}
+
+.bold {
+    font-weight: bold;
+}
